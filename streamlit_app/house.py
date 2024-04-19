@@ -3,9 +3,24 @@ import pandas as pd
 import numpy as np
 import json
 import dill
-with open('rfr_v1.pkl', 'rb') as f:
-    reloaded_model = dill.load(f)
+import urllib.request
 
+
+
+def get_model():
+    import gdown
+    url = 'https://drive.google.com/file/d/1H2pH7Kh9B1lXj2LFMtf4u0XPD8IMFtI0/view?usp=sharing'
+    output = 'downloaded_rfr_v1.pkl'
+    gdown.download(url, output, quiet=False, fuzzy=True)
+    with open('downloaded_rfr_v1.pkl', 'rb') as f:
+        reloaded_model = dill.load(f)
+
+    return reloaded_model
+
+
+
+
+reloaded_model = get_model()
 
 st.title('Median House Value Prediction')
 

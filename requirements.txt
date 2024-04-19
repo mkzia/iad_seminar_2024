@@ -6,3 +6,7 @@ ydata-profiling
 xgboost
 dill
 streamlit
+joblib
+"uvicorn[standard]"
+fastapi
+gdown
