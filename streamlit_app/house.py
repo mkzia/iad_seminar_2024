@@ -23,7 +23,7 @@ reloaded_model = get_model()
 
 st.title('Median House Value Prediction')
 
-with open('rfr_v1_info.json') as f:
+with open('streamlit_app/rfr_v1_info.json') as f:
     model_info = json.load(f)
     side_bar_options = model_info.get('options')
     options = {}
