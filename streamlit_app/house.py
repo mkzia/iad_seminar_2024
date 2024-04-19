@@ -3,8 +3,7 @@ import pandas as pd
 import numpy as np
 import json
 import dill
-import urllib.request
-
+import os
 
 
 def get_model():
@@ -18,7 +17,7 @@ def get_model():
     return reloaded_model
 
 
-
+print(os.listdir())
 
 reloaded_model = get_model()
 

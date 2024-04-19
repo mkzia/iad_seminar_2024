@@ -1,8 +1,11 @@
 from typing import Union
-
+import dill
 from fastapi import FastAPI
 
 app = FastAPI()
+
+with open('rfr_v1.pkl', 'rb') as f: 
+    model = dill.load(f) 
 
 
 @app.get("/")
