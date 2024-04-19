@@ -37,11 +37,13 @@ with open('streamlit_app/rfr_v1_info.json') as f:
 st.write(options)
 
 if st.button('Predict'): 
+    print('IN button')
     # Convert options to df 
     df = pd.Series(options).to_frame().T
     df["income_cat"] = pd.cut(df["median_income"],
                                bins=[0., 1.5, 3.0, 4.5, 6., np.inf],
                                labels=[1, 2, 3, 4, 5])
-    y_hat = reloaded_model.predict(df)
+    print(df)
+    # y_hat = reloaded_model.predict(df)
     st.write(df)
-    st.write(f'The predicted median house value is: ${y_hat[0]:,}')
+    # st.write(f'The predicted median house value is: ${y_hat[0]:,}')
