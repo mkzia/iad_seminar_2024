@@ -43,7 +43,8 @@ if st.button('Predict'):
     df["income_cat"] = pd.cut(df["median_income"],
                                bins=[0., 1.5, 3.0, 4.5, 6., np.inf],
                                labels=[1, 2, 3, 4, 5])
-    print(df)
-    # y_hat = reloaded_model.predict(df)
+
+    y_hat = reloaded_model.predict(df)
     st.write(df)
+    st.write(y_hat)
     # st.write(f'The predicted median house value is: ${y_hat[0]:,}')
